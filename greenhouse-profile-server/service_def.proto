@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message Empty {}
+
+message GetOrCreateProfileRequest {
+    string player_id = 1;
+    string player_name = 2;
+}
+
+message Profile {
+    string player_id = 1;
+    string player_name = 2;
+    string colour = 3;
+}
+
+service ProfileService {
+    rpc GetOrCreateProfile (GetOrCreateProfileRequest) returns Profile {}
+}
